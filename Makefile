@@ -10,7 +10,7 @@ node_modules: package.json
 	touch $@
 
 test: 
-	mocha ./tests/
+	./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml
 
 clean:
 	rm -rf ./node_modules
